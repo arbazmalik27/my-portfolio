@@ -1,0 +1,27 @@
+
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6A00"/>
+      <stop offset="100%" stop-color="#EE0979"/>
+    </linearGradient>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#EE0979" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="150" cy="150" r="140" fill="url(#bgGradient)" />
+  <circle cx="150" cy="150" r="110" fill="none" stroke="url(#vGradient)" stroke-width="2" opacity="0.15"/>
+  <circle cx="150" cy="150" r="80" fill="none" stroke="url(#vGradient)" stroke-width="2" opacity="0.1"/>
+  <path d="M80 70 L150 230 L220 70 H190 L150 170 L110 70 Z" fill="url(#vGradient)" filter="url(#glow)"/>
+  <circle cx="60" cy="60" r="6" fill="#FF6A00" opacity="0.4"/>
+  <circle cx="240" cy="60" r="5" fill="#EE0979" opacity="0.4"/>
+  <circle cx="60" cy="240" r="4" fill="#FF6A00" opacity="0.4"/>
+  <circle cx="240" cy="240" r="6" fill="#EE0979" opacity="0.4"/>
+  <circle cx="150" cy="20" r="5" fill="#FF6A00" opacity="0.3"/>
+  <circle cx="150" cy="280" r="5" fill="#EE0979" opacity="0.3"/>
+</svg>
