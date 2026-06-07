@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Tilt } from 'react-tilt';
 import { styles } from '../styles';
 import { services } from '../constants';
@@ -16,7 +16,7 @@ const ServiceCard = ({ index, title, icon }) => {
       }}
       className="w-full sm:w-[250px]"
     >
-      <motion.div
+      <Motion.div
         variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
         className="green-pink-gradient p-[1px] rounded-[20px] shadow-card h-full"
       >
@@ -30,7 +30,7 @@ const ServiceCard = ({ index, title, icon }) => {
             {title}
           </h3>
         </div>
-      </motion.div>
+      </Motion.div>
     </Tilt>
   );
 };
@@ -38,22 +38,17 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <Motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+      </Motion.div>
 
-      <motion.p
+      <Motion.p
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a passionate software developer specializing in JavaScript and
-        TypeScript, with hands-on experience building modern web applications
-        using React, Node.js, and Three.js. I thrive on turning complex problems
-        into simple, elegant solutions. With a strong focus on performance and
-        user experience, I work closely with clients and teams to deliver
-        scalable, maintainable, and impactful digital products.
-      </motion.p>
+        I'm a passionate Full-Stack Developer specializing in modern web technologies such as React, Node.js, MongoDB, and JavaScript. I enjoy solving real-world problems through clean and efficient code, creating responsive and user-friendly applications. My focus is on building scalable solutions while continuously improving my skills and exploring new technologies.
+      </Motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
@@ -64,4 +59,5 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, 'about');
+const WrappedAbout = SectionWrapper(About, 'about');
+export default WrappedAbout;

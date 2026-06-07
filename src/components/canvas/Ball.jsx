@@ -7,7 +7,6 @@ import {
   Float,
   OrbitControls,
   Preload,
-  useTexture,
 } from '@react-three/drei'
 
 import CanvasLoader from '../Loader'

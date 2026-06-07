@@ -1,5 +1,5 @@
 import {Tilt} from 'react-tilt'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { styles } from '../styles'
 import { github } from '../assets'
 import { SectionWrapper } from '../hoc'
@@ -9,7 +9,7 @@ import { fadeIn, textVariant } from '../utils/motion'
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
-    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
+    <Motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       <Tilt
         options={{
           max: 45,
@@ -52,25 +52,27 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           ))}
         </div>
       </Tilt>
-    </motion.div>
+    </Motion.div>
   )
 }
 
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <Motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
-      </motion.div>
+      </Motion.div>
 
       <div className='w-full flex'>
-        <motion.p
+        <Motion.p
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          The following projects demonstrate my skills and experience through practical, real-world applications. Each project includes a brief description along with links to code repositories and live demos. These works reflect my ability to build full-stack applications, solve complex problems, adapt to modern technologies, and manage projects from concept to deployment. They showcase not just my technical proficiency, but also my focus on building solutions that deliver value and address real-world needs.
-        </motion.p>
+
+      These projects showcase my journey as a Full-Stack Developer and highlight my skills in React.js, Node.js, MongoDB, and modern web development. Each project reflects my ability to build responsive user interfaces, develop scalable applications, solve real-world problems, and continuously learn new technologies. Through these projects, I demonstrate my passion for creating clean, functional, and user-focused digital experiences.
+
+        </Motion.p>
 
       </div>
 
@@ -83,4 +85,5 @@ const Works = () => {
   )
 }
 
-export default SectionWrapper(Works, '')
+const WrappedWorks = SectionWrapper(Works, '')
+export default WrappedWorks

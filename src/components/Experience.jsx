@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -49,10 +49,10 @@ const ExperienceCard = ({ experience }) => (
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <Motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
-      </motion.div>
+      </Motion.div>
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
@@ -65,4 +65,5 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, 'work');
+const WrappedExperience = SectionWrapper(Experience, 'work');
+export default WrappedExperience;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 import { styles } from '../styles'
 import { SectionWrapper } from '../hoc'
@@ -7,7 +7,7 @@ import { fadeIn, textVariant } from '../utils/motion'
 import { testimonials } from '../constants'
 
 const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => (
-  <motion.div
+  <Motion.div
     variants={fadeIn('', 'spring', index * 0.5, 0.75)}
     className="inline-block w-full max-w-sm"
     whileHover={{ y: -8 }}
@@ -35,7 +35,7 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
         </div>
       </div>
     </div>
-  </motion.div>
+  </Motion.div>
 )
 
 
@@ -49,10 +49,10 @@ const Feedbacks = () => {
 
       {/* Section Heading */}
       <div className={`${styles.padding} rounded-2xl min-h-[300px] relative z-10`}>
-        <motion.div variants={textVariant()}>
+        <Motion.div variants={textVariant()}>
           <p className={`${styles.sectionSubText} text-gray-300`}>What others say</p>
           <h2 className={`${styles.sectionHeadText} text-white`}>Testimonials.</h2>
-        </motion.div>
+        </Motion.div>
       </div>
 
       {/* Responsive Grid for Cards */}
@@ -65,4 +65,5 @@ const Feedbacks = () => {
   )
 }
 
-export default SectionWrapper(Feedbacks, 'testimonials')
+const WrappedFeedbacks = SectionWrapper(Feedbacks, 'testimonials')
+export default WrappedFeedbacks

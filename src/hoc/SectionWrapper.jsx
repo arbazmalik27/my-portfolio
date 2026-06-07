@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { styles } from '../styles';
 import { staggerContainer } from '../utils/motion';
 
 const SectionWrapper = (Component, idName) =>
   function HOC() {
     return (
-      <motion.section
+      <Motion.section
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
@@ -15,7 +15,7 @@ const SectionWrapper = (Component, idName) =>
         id={idName}
       >
         <Component /> {/* ✅ Fix: render as JSX */}
-      </motion.section>
+      </Motion.section>
     );
   };
 

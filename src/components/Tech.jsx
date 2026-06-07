@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 import { technologies } from '../constants';
 
@@ -23,7 +23,7 @@ const Tech = () => {
       <div className="absolute inset-0 -z-10 bg-fuchsia-400 bg-[size:20px_20px] opacity-20 blur-[100px]" />
 
       {/* Section Heading */}
-      <motion.div
+      <Motion.div
         variants={textVariant()} 
         initial="hidden"
         whileInView="show"
@@ -32,12 +32,12 @@ const Tech = () => {
       >
         <p className="text-sm text-gray-400 uppercase tracking-widest">Technologies I Use</p>
         <h2 className="sm:text-7xl font-bold text-white py-4 text-4xl">Tech Stack</h2>
-      </motion.div>
+      </Motion.div>
 
       {/* Floating Tech Icons */}
       <div className="relative z-10 flex flex-row flex-wrap justify-center gap-10">
         {technologies.map((technology, index) => (
-          <motion.div
+          <Motion.div
             key={technology.name}
             animate={{ y: [0, -10, 0] }}
             transition={{
@@ -59,11 +59,12 @@ const Tech = () => {
                 {technology.name}
               </p>
             </div>
-          </motion.div>
+          </Motion.div>
         ))}
       </div>
     </div>
   );
 };
 
-export default SectionWrapper(Tech, 'tech');
+const WrappedTech = SectionWrapper(Tech, 'tech');
+export default WrappedTech;

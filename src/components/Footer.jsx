@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="text-center md:text-left">
             {/* My name with Gradient color */}
           <h2 className="text-2xl font-bold bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#074173] via-[#1679ab] to-[#5debd7] bg-clip-text text-transparent tracking-wide">
-            Vivek Kumar
+            Arbaz Malik
           </h2>
 
           <p className="text-sm text-gray-400 mt-1">
@@ -87,10 +87,11 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="mt-10 text-center text-xs text-gray-400 border-t border-gray-700 pt-4">
-        © {new Date().getFullYear()} Vivek Kumar. All rights reserved.
+        © {new Date().getFullYear()} Arbaz Malik. All rights reserved.
       </div>
     </footer>
   );
 };
 
-export default SectionWrapper(Footer, "footer");
+const WrappedFooter = SectionWrapper(Footer, "footer");
+export default WrappedFooter;
