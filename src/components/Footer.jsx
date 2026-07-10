@@ -23,7 +23,7 @@ const Footer = () => {
           </h2>
 
           <p className="text-sm text-gray-400 mt-1">
-            Full-Stack Developer & Problem Solver
+            Frontend Developer & Problem Solver
           </p>
         </div>
 

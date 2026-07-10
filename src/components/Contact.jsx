@@ -282,10 +282,10 @@ const Contact = () => {
   />
 
   <h4 className="text-xl sm:text-2xl font-bold">Arbaz Malik</h4>
-  <p className="text-sm sm:text-base text-gray-400 mb-2">Full-Stack Developer & Problem Solver</p>
+  <p className="text-sm sm:text-base text-gray-400 mb-2">Frontend Developer & Problem Solver</p>
 
   <p className="text-gray-300 text-xs sm:text-sm max-w-sm leading-relaxed">
-    I'm passionate about building modern web applications using the MERN stack and solving real-world problems through clean, efficient code. Let’s connect and collaborate!
+  I'm passionate about building responsive, user-friendly web applications with React, JavaScript, and Tailwind CSS. I focus on writing clean code and creating seamless user experiences. Let's connect and collaborate!
   </p>
 
   <div className="flex gap-5 mt-5 text-xl sm:text-2xl justify-center flex-wrap">
@@ -301,7 +301,7 @@ const Contact = () => {
     <a href="https://facebook.com/yourusername" target="_blank" rel="noreferrer">
       <FaFacebook className="hover:text-blue-600" />
     </a>
-    <a href="mailto:thetechzion@gmail.com">
+    <a href="mailto:malikarbaz084@gmail.com">
       <FaEnvelope className="hover:text-green-400" />
     </a>
   </div>

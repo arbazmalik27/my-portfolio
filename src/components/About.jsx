@@ -47,7 +47,7 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a passionate Full-Stack Developer specializing in modern web technologies such as React, Node.js, MongoDB, and JavaScript. I enjoy solving real-world problems through clean and efficient code, creating responsive and user-friendly applications. My focus is on building scalable solutions while continuously improving my skills and exploring new technologies.
+        I'm a passionate Frontend Developer specializing in React, JavaScript, Tailwind CSS, HTML, and CSS. I love transforming ideas into modern, responsive, and intuitive user interfaces that provide exceptional user experiences. I focus on writing clean, maintainable code, optimizing performance, and continuously learning new frontend technologies to build better web applications.
       </Motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">

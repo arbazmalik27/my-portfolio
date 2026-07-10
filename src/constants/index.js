@@ -9,7 +9,6 @@ import {
   css,
   reactjs,
   tailwind,
-  nodejs,
   mongodb,
   git,
   figma,
@@ -39,7 +38,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Frontend Developer",
     icon: web,
   },
   // {
@@ -47,7 +46,7 @@ const services = [
   //   icon: mobile,
   // },
   {
-    title: "Backend Developer",
+    title: "React Developer",
     icon: backend,
   },
   {
@@ -95,10 +94,10 @@ const technologies = [
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
+  // {
+  //   name: "Node JS",
+  //   icon: nodejs,
+  // },
   {
     name: "MongoDB",
     icon: mongodb,
@@ -209,69 +208,100 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+   name: "Car Rental Platform",
+    subtitle: "Frontend / React",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A modern and responsive car rental platform that allows users to browse, search, and book rental cars with an intuitive and user-friendly interface.",
+    features: [
+      "User Authentication",
+      "Car Search & Filters",
+      "Booking Dashboard",
+      "Responsive Design",
+    ],
     tags: [
       {
-        name: "react",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Tailwind CSS",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "JavaScript",
         color: "pink-text-gradient",
+      },
+      {
+        name: "REST API",
+        color: "blue-text-gradient",
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/arbazmalik27/Car-Rent-and-sell#",
+    demo_link: "https://car-rent-and-sell-jwl1rwfxo-arbazmalik27s-projects.vercel.app",
   },
+  // {
+  //   name: "AI Study Material Generator",
+  //   subtitle: "AI / SaaS",
+  //   description:
+  //     "An intelligent learning platform that generates personalized study materials, quizzes, and structured courses using the Gemini AI model — with integrated payments and authentication.",
+  //   features: [
+  //     "AI Content Generation",
+  //     "Personalized Courses",
+  //     "Stripe Payments",
+  //     "Clerk Auth",
+  //   ],
+  //   tags: [
+  //     {
+  //       name: "Next.js",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "Tailwind CSS",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "Gemini AI",
+  //       color: "pink-text-gradient",
+  //     },
+  //     {
+  //       name: "PostgreSQL",
+  //       color: "blue-text-gradient",
+  //     },
+  //   ],
+  //   image: jobit,
+  //   source_code_link: "https://github.com/",
+  //   demo_link: "https://example.com/",
+  // },
   {
-    name: "Job IT",
+    name: "Portfolio Dashboard",
+    subtitle: "Web / UI",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      "A sleek, interactive portfolio dashboard that showcases projects, skills, and case studies with responsive layouts and modern UI transitions.",
+    features: [
+      "Responsive UI",
+      "Interactive Charts",
+      "Case Study Highlights",
+      "Dark Mode",
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
       {
-        name: "nextjs",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Tailwind CSS",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Figma",
         color: "pink-text-gradient",
       },
     ],
     image: tripguide,
     source_code_link: "https://github.com/",
+    demo_link: "https://example.com/",
   },
-
- ];
+];
 
 export { services, technologies, experiences, testimonials, projects };

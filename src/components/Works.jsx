@@ -1,57 +1,102 @@
-import {Tilt} from 'react-tilt'
 import { motion as Motion } from 'framer-motion'
 import { styles } from '../styles'
-import { github } from '../assets'
 import { SectionWrapper } from '../hoc'
 import { projects } from '../constants'
 import { fadeIn, textVariant } from '../utils/motion'
 
+const ProjectCard = ({ project, index }) => {
+  const {
+    name,
+    subtitle,
+    description,
+    features,
+    tags,
+    image,
+    source_code_link,
+    demo_link,
+  } = project
+  const isEven = index % 2 !== 0
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
-    <Motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+    <Motion.div variants={fadeIn('up', 'spring', index * 0.3, 0.75)} className="w-full">
+      <div
+        className={`grid gap-8 items-center rounded-[30px] border border-[#112240] bg-[#0b1428] p-6 shadow-2xl shadow-[#040c18]/40 lg:p-10 ${
+          isEven ? 'lg:grid-cols-[0.9fr,1.1fr]' : 'lg:grid-cols-[1.1fr,0.9fr]'
+        }`}
       >
-        <div className="relative w-full h-[230px]">
+        <div className={`overflow-hidden rounded-[28px] ${isEven ? 'lg:order-2' : ''}`}>
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-[320px] object-cover sm:h-[420px]"
           />
+        </div>
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, '_blank')}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
+        <div className={`flex flex-col justify-between ${isEven ? 'lg:order-1' : ''}`}>
+          <div>
+            <h3 className="text-[32px] font-bold text-white sm:text-[42px] leading-[1.05]">
+              {name}
+            </h3>
+            {subtitle && (
+              <span className="mt-4 inline-flex rounded-full border border-[#1f3255] bg-[#071224] px-4 py-2 text-[12px] uppercase tracking-[0.3em] text-[#56ccf2]">
+                {subtitle}
+              </span>
+            )}
+            <p className="mt-6 text-[16px] leading-[28px] text-secondary sm:text-[17px] max-w-3xl">
+              {description}
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-4">
+            {features?.length > 0 && (
+              <div className="flex flex-wrap gap-3">
+                {features.map((feature) => (
+                  <span
+                    key={feature}
+                    className="rounded-full border border-[#1f3255] bg-[#08182f] px-4 py-2 text-[13px] text-white"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {tags?.length > 0 && (
+              <div className="flex flex-wrap gap-3">
+                {tags.map((tag) => (
+                  <span
+                    key={tag.name}
+                    className="rounded-full border border-[#1b2f4a] bg-[#071527] px-3 py-2 text-[13px] text-secondary"
+                  >
+                    {tag.name}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-4">
+              {source_code_link && (
+                <button
+                  type="button"
+                  onClick={() => window.open(source_code_link, '_blank')}
+                  className="rounded-full border border-[#1f3255] bg-[#112240] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#16325a]"
+                >
+                  GitHub
+                </button>
+              )}
+              {demo_link && (
+                <button
+                  type="button"
+                  onClick={() => window.open(demo_link, '_blank')}
+                  className="rounded-full bg-[#0f6ff6] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0d5cd5]"
+                >
+                  Live Demo
+                </button>
+              )}
             </div>
           </div>
         </div>
-
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
-            </p>
-          ))}
-        </div>
-      </Tilt>
+      </div>
     </Motion.div>
   )
 }
@@ -60,25 +105,24 @@ const Works = () => {
   return (
     <>
       <Motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <p className={styles.sectionSubText}>What I've built</p>
+        <h2 className={styles.sectionHeadText}>
+          Featured <span className="blue-text-gradient">Projects</span>
+        </h2>
       </Motion.div>
 
-      <div className='w-full flex'>
+      <div className="w-full flex">
         <Motion.p
-        variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          variants={fadeIn('', '', 0.1, 1)}
+          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-
-      These projects showcase my journey as a Full-Stack Developer and highlight my skills in React.js, Node.js, MongoDB, and modern web development. Each project reflects my ability to build responsive user interfaces, develop scalable applications, solve real-world problems, and continuously learn new technologies. Through these projects, I demonstrate my passion for creating clean, functional, and user-focused digital experiences.
-
+          These projects showcase my journey as a Frontend Developer and highlight my skills in React.js, JavaScript, Tailwind CSS, and modern frontend development. Each project reflects my ability to build responsive user interfaces, create seamless user experiences, solve real-world problems, and continuously learn new technologies.
         </Motion.p>
-
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className="mt-16 flex w-full flex-col gap-10">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} project={project} index={index} />
         ))}
       </div>
     </>
