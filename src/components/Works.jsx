@@ -14,8 +14,8 @@ const ProjectCard = ({ project, index }) => {
     image,
     source_code_link,
     demo_link,
-  } = project
-  const isEven = index % 2 !== 0
+  } = project;
+  const isEven = index % 2 !== 0;
 
   return (
     <Motion.div variants={fadeIn('up', 'spring', index * 0.3, 0.75)} className="w-full">
@@ -74,24 +74,26 @@ const ProjectCard = ({ project, index }) => {
               </div>
             )}
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mt-2 relative z-20 pointer-events-auto">
               {source_code_link && (
-                <button
-                  type="button"
-                  onClick={() => window.open(source_code_link, '_blank')}
-                  className="rounded-full border border-[#1f3255] bg-[#112240] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#16325a]"
+                <a
+                  href={source_code_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#1f3255] bg-[#112240] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#16325a] hover:scale-105 active:scale-95 cursor-pointer relative z-20 pointer-events-auto"
                 >
                   GitHub
-                </button>
+                </a>
               )}
               {demo_link && (
-                <button
-                  type="button"
-                  onClick={() => window.open(demo_link, '_blank')}
-                  className="rounded-full bg-[#0f6ff6] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0d5cd5]"
+                <a
+                  href={demo_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0f6ff6] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0d5cd5] hover:scale-105 active:scale-95 cursor-pointer shadow-lg shadow-blue-500/20 relative z-20 pointer-events-auto"
                 >
                   Live Demo
-                </button>
+                </a>
               )}
             </div>
           </div>
@@ -103,7 +105,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Works = () => {
   return (
-    <>
+    <div className="relative z-10">
       <Motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>What I've built</p>
         <h2 className={styles.sectionHeadText}>
@@ -125,7 +127,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} project={project} index={index} />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

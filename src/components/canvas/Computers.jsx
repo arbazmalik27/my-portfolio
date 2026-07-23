@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Computers = () => {
-  return (
-    <div>Computers</div>
-  )
-}
+const ComputersCanvas = () => {
+  return null;
+};
 
-export default Computers
+export default ComputersCanvas;

@@ -1,7 +1,7 @@
 import { useRef, useMemo, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.esm";
+import * as random from "maath/random";
 
 const Stars = () => {
   const ref = useRef();
@@ -83,6 +83,7 @@ const StarsCanvas = () => {
         frameloop="always"
         dpr={[1, 1.5]}
         gl={{ preserveDrawingBuffer: false, antialias: true }}
+        style={{ pointerEvents: "none" }}
       >
         <Suspense fallback={null}>
           <Stars />

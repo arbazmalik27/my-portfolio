@@ -19,6 +19,7 @@ import {
   carrent,
   jobit,
   tripguide,
+  ems,
 } from "../assets";
 
 export const navLinks = [
@@ -237,7 +238,7 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/arbazmalik27/Car-Rent-and-sell#",
+    source_code_link: "https://github.com/arbazmalik27/Car-Rent-and-sell",
     demo_link: "https://car-rent-and-sell-jwl1rwfxo-arbazmalik27s-projects.vercel.app",
   },
   // {
@@ -274,34 +275,46 @@ const projects = [
   //   demo_link: "https://example.com/",
   // },
   {
-    name: "Portfolio Dashboard",
-    subtitle: "Web / UI",
-    description:
-      "A sleek, interactive portfolio dashboard that showcases projects, skills, and case studies with responsive layouts and modern UI transitions.",
-    features: [
-      "Responsive UI",
-      "Interactive Charts",
-      "Case Study Highlights",
-      "Dark Mode",
-    ],
-    tags: [
-      {
-        name: "React.js",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Tailwind CSS",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Figma",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
-    demo_link: "https://example.com/",
-  },
+  name: "Employee Management System",
+  subtitle: "Full Stack / Dashboard",
+  description:
+    "A modern role-based Employee Management System featuring Admin & Employee dashboards, task management, analytics, authentication, and a premium responsive UI.",
+  features: [
+    "Role-Based Authentication",
+    "Task Management",
+    "Analytics Dashboard",
+    "Responsive UI",
+  ],
+  tags: [
+    {
+      name: "React.js",
+      color: "blue-text-gradient",
+    },
+    {
+      name: "Tailwind CSS",
+      color: "green-text-gradient",
+    },
+    {
+      name: "Context API",
+      color: "pink-text-gradient",
+    },
+    {
+      name: "LocalStorage",
+      color: "blue-text-gradient",
+    },
+    {
+      name: "Recharts",
+      color: "green-text-gradient",
+    },
+    {
+      name: "Framer Motion",
+      color: "pink-text-gradient",
+    },
+  ],
+  image: ems,
+  source_code_link: "https://github.com/arbazmalik27/employee-management-system",
+  demo_link: "https://employee-management-system-74bn6hb3k-arbazmalik27s-projects.vercel.app",
+},
 ];
 
 export { services, technologies, experiences, testimonials, projects };

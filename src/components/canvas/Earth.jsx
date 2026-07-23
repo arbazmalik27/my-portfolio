@@ -7,7 +7,7 @@ import {
   PointMaterial,
   Preload
 } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.esm";
+import * as random from "maath/random";
 
 // Stars Background (Simple & Fast)
 const Stars = () => {
